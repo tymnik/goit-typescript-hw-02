@@ -3,7 +3,10 @@
   Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
 */
 
-function merge<T, U>(objA: T, objB: U): T & U {
+function merge<T extends Record<string, any>, U extends Record<string, any>>(
+  objA: T,
+  objB: U
+): T & U {
   return { ...objA, ...objB };
 }
 
